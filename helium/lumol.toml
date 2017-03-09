@@ -1,0 +1,21 @@
+[input]
+version = 1
+
+[[systems]]
+cell = 10
+file = "helium.xyz"
+velocities = {init = "300 K"}
+
+[systems.potentials.global]
+cutoff = "8 A"
+
+[[systems.potentials.pairs]]
+atoms = ["He", "He"]
+lj = {sigma = "2.0 A", epsilon = "0.3 kJ/mol"}
+
+
+[[simulations]]
+nsteps = 5000
+[simulations.propagator]
+type = "MolecularDynamics"
+timestep = "1 fs"
